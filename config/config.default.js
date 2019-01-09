@@ -7,7 +7,34 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1546830180860_537';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['robot'];
+  //跨域的配置==========    egg-cors
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true
+    },
+    // domainWhiteList: ["*"]
+  };
+  // config.cors = {
+  //   origin: '*',
+  //   allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
+  // };
+
+
+
+  // // 添加 view 配置
+  exports.view = {
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.tpl': 'nunjucks',
+    },
+  };
+  // exports.testList = {
+  //   serverUrl:'https://api.apiopen.top/musicRankings'
+  // }
+
+
 
   return config;
 };

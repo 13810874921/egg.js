@@ -5,7 +5,11 @@
   "private": true,
   "dependencies": {
     "egg": "^2.2.1",
-    "egg-scripts": "^2.5.0"
+    "egg-cors": "^2.1.2",
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.5.0",
+    "egg-view-nunjucks": "^2.2.0",
+    "moment": "^2.23.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
@@ -21,11 +25,15 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-example",
-    "stop": "egg-scripts stop --title=egg-server-example",
-    "dev": "egg-bin dev",
+    "dev": "egg-scripts start --port=7666 --env=dev --daemon --workers=1 --title=server-start",
+    "qa": "egg-scripts start --port=7666 --env=qa --daemon --workers=1 --title=server-start",
+    "prod": "egg-scripts start --port=7666 --env=qa --daemon --workers=2 --title=server-start",
+    "local": "egg-scripts start --port=7666 --env=local  --workers=1 --title=server-start",
+    "start": "egg-scripts start --daemon --title=server-start",
+    "stop": "egg-scripts stop",
+    "default": "egg-bin dev --port=7666 --cluster=2",
     "debug": "egg-bin debug",
-    "test": "npm run lint -- --fix && npm run test-local",
+    "test": "npm run lint -- --fix && npm run test-local --title=server-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",

@@ -1,10 +1,4 @@
 const Controller = require('egg').Controller
-// module.exports = {
-//     testList:{
-
-//     }
-// }
-
 class TestListController extends Controller {
     async list(){
         const ctx = this.ctx

@@ -1,6 +1,9 @@
 'use strict';
 
 module.exports = {
+    baseUrl:{
+        url:'http://127.0.0.1:7666'
+    },
     testList:{
         serverUrl:'https://api.apiopen.top/recommendPoetry',
     },

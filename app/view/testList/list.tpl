@@ -4,6 +4,7 @@
     <title>测试列表</title>
   </head>
   <body>
+    <a href='/'>跳到第一页</a>
     <h2>{{list.category}}</h2>
     <h3>{{list.author}}</h3>
     <p>{{list.origin}}</p>
